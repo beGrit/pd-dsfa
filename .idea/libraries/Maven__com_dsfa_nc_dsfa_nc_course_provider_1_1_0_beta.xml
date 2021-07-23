@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.dsfa.nc:dsfa-nc-course-provider:1.1.0-beta">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/nc/dsfa-nc-course-provider/1.1.0-beta/dsfa-nc-course-provider-1.1.0-beta.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/nc/dsfa-nc-course-provider/1.1.0-beta/dsfa-nc-course-provider-1.1.0-beta-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/nc/dsfa-nc-course-provider/1.1.0-beta/dsfa-nc-course-provider-1.1.0-beta-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.dsfa.cms:dsfa-cms-provider:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/cms/dsfa-cms-provider/1.0.0-SNAPSHOT/dsfa-cms-provider-1.0.0-20210707.105223-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/cms/dsfa-cms-provider/1.0.0-SNAPSHOT/dsfa-cms-provider-1.0.0-20210707.105223-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/cms/dsfa-cms-provider/1.0.0-SNAPSHOT/dsfa-cms-provider-1.0.0-20210707.105223-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

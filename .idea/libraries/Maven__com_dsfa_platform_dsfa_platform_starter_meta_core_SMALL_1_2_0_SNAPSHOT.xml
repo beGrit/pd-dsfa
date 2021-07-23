@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.dsfa.platform:dsfa-platform-starter-meta-core:SMALL-1.2.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-starter-meta-core/SMALL-1.2.0-SNAPSHOT/dsfa-platform-starter-meta-core-SMALL-1.2.0-20210715.030700-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-starter-meta-core/SMALL-1.2.0-SNAPSHOT/dsfa-platform-starter-meta-core-SMALL-1.2.0-20210715.030700-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-starter-meta-core/SMALL-1.2.0-SNAPSHOT/dsfa-platform-starter-meta-core-SMALL-1.2.0-20210715.030700-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

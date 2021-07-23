@@ -44,6 +44,7 @@
 				<artifactId>dsfa-platform-starter-job</artifactId>
 				<version>1.0.0</version>
 			</dependency>
+
 	    </dependencies>
 	</dependencyManagement>
 
@@ -86,6 +87,13 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<!--使用JFinal的代码生成器-->
+		<dependency>
+			<groupId>com.jfinal</groupId>
+			<artifactId>jfinal</artifactId>
+			<version>4.9.15</version>
 		</dependency>
     </dependencies>
 

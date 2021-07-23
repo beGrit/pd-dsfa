@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.dsfa.comments:dsfa-comments-api:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/comments/dsfa-comments-api/1.0.0-SNAPSHOT/dsfa-comments-api-1.0.0-20210602.065419-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/comments/dsfa-comments-api/1.0.0-SNAPSHOT/dsfa-comments-api-1.0.0-20210602.065419-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/comments/dsfa-comments-api/1.0.0-SNAPSHOT/dsfa-comments-api-1.0.0-20210602.065419-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

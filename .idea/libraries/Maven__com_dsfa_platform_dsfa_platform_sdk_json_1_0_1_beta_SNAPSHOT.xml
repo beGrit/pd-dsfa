@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.dsfa.platform:dsfa-platform-sdk-json:1.0.1-beta-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-sdk-json/1.0.1-beta-SNAPSHOT/dsfa-platform-sdk-json-1.0.1-beta-20210701.115635-3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-sdk-json/1.0.1-beta-SNAPSHOT/dsfa-platform-sdk-json-1.0.1-beta-20210701.115635-3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-sdk-json/1.0.1-beta-SNAPSHOT/dsfa-platform-sdk-json-1.0.1-beta-20210701.115635-3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

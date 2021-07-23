@@ -1,0 +1,7 @@
+elasticsearch:
+  #测试环境地址192.168.0.36:9200  正式环境地址:
+  hostlist: ${esurl}                                                                                    #elasticsearch结点多个结点中间用逗号分隔
+  default:                                                                                                      #Es链接信息配置项，可配多个在构建查询条件时使用该名称获取
+    index: index_nc                                                                                                 #es索引库名称
+    type: doc                                                                                                   #esType
+    source_field: title,typename,remark,create_date,id,username,typeid,update_date,state,userid,sfqy,update_time,pxrq_sdate,pxrq_edate,cover,xycount,bxryxs,xxryxs,kcms,kcsc,kcxs,clickcs,average_fs,skjs,fbrq,position    #要返回的字段用多个字段以,隔开
