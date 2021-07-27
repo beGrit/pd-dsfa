@@ -14,9 +14,9 @@ spring:
       - url: jdbc:mysql://192.168.0.28:3320/dsfa_nc5?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useOldAliasMetadataBehavior=true&useSSL=false
         username: nc_5
         password: Study_111111
-#    - url: jdbc:mysql://192.168.0.81:3381/dsfa_nc_gdzj?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useOldAliasMetadataBehavior=true&useSSL=false
-#      username: gdzj
-#      password: Study_111111
+  #    - url: jdbc:mysql://192.168.0.81:3381/dsfa_nc_gdzj?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useOldAliasMetadataBehavior=true&useSSL=false
+  #      username: gdzj
+  #      password: Study_111111
   redis:
     host: 192.168.0.46
     database: 1
