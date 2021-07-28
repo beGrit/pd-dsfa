@@ -11,17 +11,14 @@ spring:
       loginUsername: _admin2
       loginPassword: dreamsoft
     druids:
-      - url: jdbc:mysql://192.168.0.28:3320/dsfa_nc5?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useOldAliasMetadataBehavior=true&useSSL=false
-        username: nc_5
+      - url: jdbc:mysql://192.168.0.14:3141/dsfa_pdwlxy?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useOldAliasMetadataBehavior=true&useSSL=false
+        username: pdwlxy
         password: Study_111111
-#    - url: jdbc:mysql://192.168.0.81:3381/dsfa_nc_gdzj?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useOldAliasMetadataBehavior=true&useSSL=false
-#      username: gdzj
-#      password: Study_111111
   redis:
-    host: 192.168.0.46
+    host: 192.168.0.21
     database: 1
-    port: 6522
-    password: DreamSoft_6522
+    port: 6316
+    password: DreamSoft_6316
     jedis:
       pool:
         max-idle: 200
@@ -33,8 +30,8 @@ spring:
 dsfa:
   meta:
     git:
-      username: 1442851367@qq.com
-      password: lw586934
+      username: linsf@dreamdt.cn
+      password: LSFlsf123
       enable: true
     file:
       path: D:/project/net/nc/
@@ -60,7 +57,7 @@ dubbo:
   cloud:
     subscribed-services: ${spring.application.name}}
 rocketmq:
-  nameServer: 192.168.0.156:9876
+  nameServer: 192.168.0.79:9058
   producer:
     group: nc
 polyv:
