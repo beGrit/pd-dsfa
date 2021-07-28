@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/dsfa-project-nc.iml" filepath="$PROJECT_DIR$/dsfa-project-nc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson-domain/lesson-domain.iml" filepath="$PROJECT_DIR$/lesson-domain/lesson-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson-persistence/lesson-persistence.iml" filepath="$PROJECT_DIR$/lesson-persistence/lesson-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson-web/lesson-web.iml" filepath="$PROJECT_DIR$/lesson-web/lesson-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pd-starter/pd-starter.iml" filepath="$PROJECT_DIR$/pd-starter/pd-starter.iml" />
     </modules>
   </component>
 </project>

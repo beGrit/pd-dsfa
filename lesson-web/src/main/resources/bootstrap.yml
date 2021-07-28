@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: 192.168.0.107:8850
+      config:
+        file-extension: yaml
+        enabled: false
+        namespace: renm
+      discovery:
+        enabled: false

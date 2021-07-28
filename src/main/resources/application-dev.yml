@@ -34,18 +34,18 @@ dsfa:
       password: LSFlsf123
       enable: true
     file:
-      path: D:/project/net/nc/
+      path: /home/lsf/Projects/build-to-serve/WebBased/Git/pd-dsfa-web
   session:
     authIgnore: true
     rule:
       valiRepeat: true
 dsf:
   file:
-    upload-virtual-path: D:/project/net/data/
+    upload-virtual-path: /home/lsf/Projects/build-to-serve/WebBased/Git/pd-dsfa-web/data/
     allow: txt,doc,docx,pdf,pptx,ppt,xls,xlsx,wps,jpg,png,gif,mp4,jpeg,mp3
   video:
     ffmpeg: D:/Tool/ffmpeg/bin
-    output: D:/project/net/data/
+    output: /home/lsf/Projects/build-to-serve/WebBased/Git/pd-dsfa-web/data/
 dubbo:
   scan:
     base-packages: com.dsfa

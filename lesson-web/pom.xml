@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dsfa-project-nc</artifactId>
+        <groupId>com.dsfa.nc</groupId>
+        <version>1.1.0-beta</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>lesson-web</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dsfa.nc</groupId>
+            <artifactId>dsfa-nc-starter</artifactId>
+        </dependency>
+
+        <!-- 平台-->
+        <dependency>
+            <groupId>com.dsfa.platform</groupId>
+            <artifactId>dsfa-platform-starter-router-filter</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dsfa.cms</groupId>
+            <artifactId>dsfa-cms-provider</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dsfa.platform</groupId>
+            <artifactId>dsfa-platform-api-ding</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dsfa.platform</groupId>
+            <artifactId>dsfa-platform-api-ding-provider</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dsfa.platform</groupId>
+            <artifactId>dsfa-platform-starter-job</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dsfa.nc</groupId>
+            <artifactId>dsfa-nc-exam-provider</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--使用JFinal的代码生成器-->
+        <dependency>
+            <groupId>com.jfinal</groupId>
+            <artifactId>jfinal</artifactId>
+            <version>4.9.15</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dsfa.nc</groupId>
+            <artifactId>lesson-domain</artifactId>
+            <version>1.1.0-beta</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dsfa.nc</groupId>
+            <artifactId>lesson-persistence</artifactId>
+            <version>1.1.0-beta</version>
+        </dependency>
+    </dependencies>
+
+</project>

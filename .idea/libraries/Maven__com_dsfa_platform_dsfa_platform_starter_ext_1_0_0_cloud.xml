@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.dsfa.platform:dsfa-platform-starter-ext:1.0.0-cloud">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-starter-ext/1.0.0-cloud/dsfa-platform-starter-ext-1.0.0-cloud.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/dsfa/platform/dsfa-platform-starter-ext/1.0.0-cloud/dsfa-platform-starter-ext-1.0.0-cloud.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-starter-ext/1.0.0-cloud/dsfa-platform-starter-ext-1.0.0-cloud-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/dsfa/platform/dsfa-platform-starter-ext/1.0.0-cloud/dsfa-platform-starter-ext-1.0.0-cloud-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-starter-ext/1.0.0-cloud/dsfa-platform-starter-ext-1.0.0-cloud-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/dsfa/platform/dsfa-platform-starter-ext/1.0.0-cloud/dsfa-platform-starter-ext-1.0.0-cloud-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

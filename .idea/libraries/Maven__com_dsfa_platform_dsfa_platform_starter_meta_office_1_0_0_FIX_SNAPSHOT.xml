@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.dsfa.platform:dsfa-platform-starter-meta-office:1.0.0-FIX-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-starter-meta-office/1.0.0-FIX-SNAPSHOT/dsfa-platform-starter-meta-office-1.0.0-FIX-20210630.012055-4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/dsfa/platform/dsfa-platform-starter-meta-office/1.0.0-FIX-SNAPSHOT/dsfa-platform-starter-meta-office-1.0.0-FIX-20210630.012055-4.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-starter-meta-office/1.0.0-FIX-SNAPSHOT/dsfa-platform-starter-meta-office-1.0.0-FIX-20210630.012055-4-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/dsfa/platform/dsfa-platform-starter-meta-office/1.0.0-FIX-SNAPSHOT/dsfa-platform-starter-meta-office-1.0.0-FIX-20210630.012055-4-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Library/maven_repository/com/dsfa/platform/dsfa-platform-starter-meta-office/1.0.0-FIX-SNAPSHOT/dsfa-platform-starter-meta-office-1.0.0-FIX-20210630.012055-4-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/dsfa/platform/dsfa-platform-starter-meta-office/1.0.0-FIX-SNAPSHOT/dsfa-platform-starter-meta-office-1.0.0-FIX-20210630.012055-4-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

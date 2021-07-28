@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-07-28T17:28:35+0800",
-    comments = "version: 1.4.1.Final, compiler: javac, environment: Java 1.8.0_281 (Oracle Corporation)"
+    date = "2021-07-28T20:59:16+0800",
+    comments = "version: 1.4.1.Final, compiler: javac, environment: Java 1.8.0_292 (Oracle Corporation)"
 )
 @Component
 public class CourseAppraiseBasicConverterImpl implements CourseAppraiseBasicConverter {

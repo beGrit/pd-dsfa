@@ -8,15 +8,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$PROJECT_DIR$/../../../../../../../Library/maven_repository/org/mapstruct/mapstruct-processor/1.4.1.Final/mapstruct-processor-1.4.1.Final.jar" />
-          <entry name="$PROJECT_DIR$/../../../../../../../Library/maven_repository/org/mapstruct/mapstruct/1.4.1.Final/mapstruct-1.4.1.Final.jar" />
-          <entry name="$PROJECT_DIR$/../../../../../../../Library/maven_repository/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.4.1.Final/mapstruct-processor-1.4.1.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.1.Final/mapstruct-1.4.1.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" />
         </processorPath>
-        <module name="dsfa-project-nc" />
+        <module name="lesson-domain" />
+        <module name="pd-starter" />
+        <module name="lesson-web" />
+        <module name="lesson-persistence" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dsfa-project-nc" target="1.8" />
+      <module name="lesson-domain" target="1.8" />
+      <module name="lesson-persistence" target="1.8" />
+      <module name="lesson-web" target="1.8" />
+      <module name="pd-starter" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

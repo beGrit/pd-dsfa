@@ -1,0 +1,113 @@
+server:
+  port: 9081
+  servlet:
+    context-path: /${spring.application.name}
+    session:
+      timeout: 720m
+spring:
+  devMode: true
+  datasource:
+    monitor:
+      loginUsername: _admin2
+      loginPassword: dreamsoft
+    druids:
+      ## 阿里云生产
+      #- url: jdbc:mysql://39.101.193.116:83/nc_cp?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useOldAliasMetadataBehavior=true&useSSL=false
+      #  username: nc_cp
+      #  password: DreamSoft_789
+      ##成都测试
+      - url: jdbc:mysql://192.168.0.28:3320/dsfa_nc5?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useOldAliasMetadataBehavior=true&useSSL=false
+        username: nc_5
+        password: Study_111111
+      - url: jdbc:mysql://rm-bp1t0b37x14ul5uplmo.mysql.rds.aliyuncs.com:3306/ding_cloud_push?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useOldAliasMetadataBehavior=true&useSSL=false
+        username: renm
+        password: DreamSoft_789
+        name: ding_isv_rds
+  redis:
+    host: 192.168.0.46
+    database: 13
+    port: 6522
+    password: DreamSoft_6522
+    jedis:
+      pool:
+        max-idle: 200
+        min-idle: 10
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+dsfa:
+  meta:
+    git:
+      username: 511373265@qq.com
+      password: 1314520Mm
+      enable: true
+    file:
+      path: D:/project/dsfa-nc/nc/
+  session:
+    authIgnore: true
+    rule:
+      valiRepeat: true
+  job:
+    # 是否开启任务调度[选填]，默认不开启
+    enabled: true
+    # 预警邮件[选填]
+    emailFrom: 1969057075@qq.com
+    # 预警频率[选填]，默认10分钟一次
+    emailAlarmTime: 10
+    ## 调度线程池最大线程配置[选填]
+    triggerpoolFastMax: 200
+    triggerpoolSlowMax: 100
+    # 协议[选填]，默认http
+    protocol: http
+    ### 执行器运行日志文件存储磁盘路径[选填] ：需要对该路径拥有读写权限；为空则默认存放到包的路径下
+    logPath: D:/workspace/dsfa-platform-parent/dsfa-platform-starter-job/target/job-logs
+    # 执行器的名称[选填]，为空则默认使用”spring.application.name“名称，集群使用相同的应用名称，分布式环境使用服务名称
+    appName: renm
+    ### 执行器日志文件保存天数[选填]：默认7天过期
+dsf:
+  file:
+    upload-virtual-path: D:/project/dsfa-nc/data/
+dubbo:
+  scan:
+    base-packages: com.dsfa
+  protocol:
+    name: dubbo
+    port: -1  #自动寻找可用端口
+  cloud:
+    subscribed-services: ${spring.application.name}}
+rocketmq:
+  nameServer: 192.168.0.79:9094
+  producer:
+    group: nc
+polyv:
+  live:
+    appId: fqr4ef92nz
+    appSecret: e86a8bfb27794a52b1b6844dca521d02
+    userId: c018269167
+    #分类id
+    categoryId: 370836
+    apiUrl:
+  db:
+    writetoken: f2af0cb9-d28c-4280-8aba-4fef1c0ae881
+    readtoken: d4eb1afd-9e63-4007-a064-be7a4113f457
+    secretkey: Xmcz1F3aY6
+elasticsearch:
+  hostlist: 192.168.0.40:9200                                                                                    #elasticsearch结点多个结点中间用逗号分隔
+  default:                                                                                                      #Es链接信息配置项，可配多个在构建查询条件时使用该名称获取
+    index: index_nc                                                                                                 #es索引库名称
+    type: doc                                                                                                   #esType
+    source_field: title,typename,remark,create_date,id,username,typeid,update_date,state,userid,sfqy,update_time,pxrq_sdate,pxrq_edate,cover,xycount,bxryxs,xxryxs,kcms,kcsc,kcxs,clickcs,average_fs,skjs,fbrq    #要返回的字段用多个字段以,隔开
+api:
+  ding:
+    # 公版钉钉
+    publics:
+      type: isv
+      agentId: 16779001
+      appKey: suite7rxv6sswnlsdkeqp
+      appSecret: f-VbmchSRioTpGAskndbL2uGTs1xphrE5CtTjXNoHxMyne3ZXhtI8IdUKaKyO1j3
+      deptRoot: 2a35c0b6b8894699bdbc4656aa1ef7bc
+      callbackTag:
+      task: false
+examurl: http://192.168.0.36:8085
+esurl: 192.168.0.36:9200
