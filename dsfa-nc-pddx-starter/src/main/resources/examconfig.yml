@@ -1,0 +1,7 @@
+exam: # 测试地址：http://192.168.0.36:8085,http://125.69.82.54:13604 正式环境:http://exam.xuexibang.cn
+  menu:
+    jump:
+      url: ${examurl}
+  url: ${examurl}/
+  nginx:
+    url: ${examurl}/exam
