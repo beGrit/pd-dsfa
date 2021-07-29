@@ -5,7 +5,7 @@ import com.dsfa.platform.sdk.common.kit.StrKit;
 import javax.validation.constraints.NotNull;
 
 /**
- * @ClassName CommentType
+ * @ClassName AppraiseItemType 评价类型
  * @Description TODO
  * @Author pocky
  * @Date 2021/7/28

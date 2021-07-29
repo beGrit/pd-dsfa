@@ -1,8 +1,8 @@
-package com.dsfa.nc.pd.base;
+package com.dsfa.nc.pd.domain;
 
 import javax.validation.constraints.NotNull;
 
-public interface Repository<T extends Aggregate<ID>, ID extends Identifier> {
+public interface Repository<T extends Entity<ID>, ID extends Identifier> {
     void attach(@NotNull T aggregate);
 
     void detach(@NotNull T aggregate);

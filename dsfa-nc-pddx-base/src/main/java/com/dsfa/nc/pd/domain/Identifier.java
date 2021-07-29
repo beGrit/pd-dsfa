@@ -1,4 +1,4 @@
-package com.dsfa.nc.pd.base;
+package com.dsfa.nc.pd.domain;
 
 import java.io.Serializable;
 

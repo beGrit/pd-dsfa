@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dsfa-nc-pddx-starter</artifactId>
+    <artifactId>dsfa-nc-pddx-learn-domain</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -17,22 +17,9 @@
     </properties>
 
     <dependencies>
-        <!--pd web项目-->
         <dependency>
             <groupId>com.dsfa.nc</groupId>
-            <artifactId>dsfa-nc-pddx-statistics-web</artifactId>
-            <version>1.1.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.dsfa.nc</groupId>
-            <artifactId>dsfa-nc-pddx-lesson-web</artifactId>
-            <version>1.1.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.dsfa.nc</groupId>
-            <artifactId>dsfa-nc-pddx-learn-web</artifactId>
+            <artifactId>dsfa-nc-pddx-base</artifactId>
             <version>1.1.0-beta</version>
         </dependency>
     </dependencies>

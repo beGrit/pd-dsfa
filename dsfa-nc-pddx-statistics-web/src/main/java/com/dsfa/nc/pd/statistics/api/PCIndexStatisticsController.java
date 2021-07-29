@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @RequestMapping(value = "/pc/nc/pagehome/index")
-public class IndexStatisticsController extends BaseController {
+public class PCIndexStatisticsController extends BaseController {
     @Autowired
     IStatisticsService countService;
 

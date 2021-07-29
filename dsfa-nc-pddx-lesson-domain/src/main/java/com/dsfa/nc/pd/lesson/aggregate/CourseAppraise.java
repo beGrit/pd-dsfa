@@ -1,7 +1,10 @@
 package com.dsfa.nc.pd.lesson.aggregate;
 
+import com.dsfa.nc.pd.domain.Aggregate;
+import com.dsfa.nc.pd.domain.Entity;
 import com.dsfa.nc.pd.lesson.entity.appraise.CourseAppraiseItem;
 import com.dsfa.nc.pd.lesson.types.AppraiseItemType;
+import com.dsfa.nc.pd.types.PK;
 import com.dsfa.platform.sdk.common.kit.StrKit;
 import lombok.Getter;
 
@@ -14,7 +17,9 @@ import java.util.List;
  * @Date 2021/7/28
  **/
 @Getter
-public class CourseAppraise {
+public class CourseAppraise implements Aggregate<PK> {
+    private PK id;
+
     private String courseId;
 
     private Double score;
@@ -60,7 +65,7 @@ public class CourseAppraise {
             if (flag1) {
                 // 新增请求
                 CourseAppraiseItem courseAppraiseItem = new CourseAppraiseItem();
-                courseAppraiseItem.setId(StrKit.uuid());
+                courseAppraiseItem.setId(new PK(StrKit.uuid()));
                 courseAppraiseItem.setCourseId(this.courseId);
                 courseAppraiseItem.setAccountId(accountId);
                 courseAppraiseItem.setType(appraiseItemType);

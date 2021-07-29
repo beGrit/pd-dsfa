@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * @ClassName CollectController
+ * @ClassName AppraiseController 评价controller
  * @Description TODO
  * @Author pocky
  * @Date 2021/7/28
  **/
 @RestController
 @RequestMapping(value = "/collect")
-public class CollectController extends BaseController {
+public class AppraiseController extends BaseController {
 
     @Autowired
     @Qualifier(value = "lsf_collection_service")
@@ -33,7 +33,7 @@ public class CollectController extends BaseController {
         if (rtn) {
             return success();
         } else {
-            throw new CourseException("收藏失败");
+            throw new CourseException("评价失败");
         }
     }
 }

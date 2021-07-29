@@ -11,6 +11,9 @@
         <module>dsfa-nc-pddx-base</module>
         <module>dsfa-nc-pddx-statistics-web</module>
 		<module>dsfa-nc-pddx-statistics-domain</module>
+        <module>dsfa-nc-pddx-learn-domain</module>
+        <module>dsfa-nc-pddx-learn-web</module>
+		<module>dsfa-nc-pddx-learn-persistence</module>
 	</modules>
     <parent>
 		<groupId>com.dsfa.nc</groupId>

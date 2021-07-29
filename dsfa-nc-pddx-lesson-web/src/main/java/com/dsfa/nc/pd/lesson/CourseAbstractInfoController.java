@@ -38,4 +38,5 @@ public class CourseAbstractInfoController extends BaseController {
 
         return success(courseAbstractInfoDto);
     }
+
 }

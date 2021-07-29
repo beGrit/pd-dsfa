@@ -3,7 +3,7 @@ package com.dsfa.nc.pd.lesson.entity.course;
 import lombok.Data;
 
 /**
- * @ClassName Course
+ * @ClassName CourseInfo (课程的基本你信息)
  * @Description TODO
  * @Author pocky
  * @Date 2021/7/23

@@ -4,6 +4,7 @@ import com.dsfa.nc.pd.lesson.Do.CourseAppraiseItemDO;
 import com.dsfa.nc.pd.lesson.converter.CourseAppraiseBasicConverter;
 import com.dsfa.nc.pd.lesson.entity.appraise.CourseAppraiseItem;
 import com.dsfa.nc.pd.lesson.reposiitory.ICourseAppraiseItemRepository;
+import com.dsfa.nc.pd.types.PK;
 import com.dsfa.platform.sdk.common.kit.StrKit;
 import org.springframework.stereotype.Repository;
 
@@ -63,7 +64,7 @@ public class CourseAppraiseItemRepositoryImpl implements ICourseAppraiseItemRepo
     public int save(CourseAppraiseItem item) {
         boolean res;
         if (item.getId() == null) {
-            item.setId(StrKit.uuid());
+            item.setId( new PK(StrKit.uuid()) );
             CourseAppraiseItemDO courseAppraiseItemDO = CourseAppraiseBasicConverter.INSTANCE.toDO(item);
             res = courseAppraiseItemDO.save();
         } else {

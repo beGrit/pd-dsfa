@@ -1,10 +1,11 @@
 package com.dsfa.nc.pd.lesson.entity.courseware;
 
+import com.dsfa.nc.pd.types.State;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @ClassName Courseware
+ * @ClassName Courseware (课件)
  * @Description TODO 课件
  * @Author pocky
  * @Date 2021/7/23
@@ -40,5 +41,5 @@ public class Courseware {
     /**
      * 课件状态
      */
-    private boolean state;
+    private State state;
 }

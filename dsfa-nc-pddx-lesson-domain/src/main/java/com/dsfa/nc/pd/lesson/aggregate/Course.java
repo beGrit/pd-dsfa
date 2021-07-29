@@ -1,11 +1,13 @@
 package com.dsfa.nc.pd.lesson.aggregate;
 
+import com.dsfa.nc.pd.domain.Aggregate;
 import com.dsfa.nc.pd.lesson.dto.CourseAbstractInfoDto;
 import com.dsfa.nc.pd.lesson.dto.CourseDetailInfoDto;
 import com.dsfa.nc.pd.lesson.dto.TeacherAbstractInfoDto;
 import com.dsfa.nc.pd.lesson.entity.course.CourseInfo;
 import com.dsfa.nc.pd.lesson.entity.courseware.Courseware;
 import com.dsfa.nc.pd.lesson.entity.teacher.TeacherInfo;
+import com.dsfa.nc.pd.types.PK;
 import com.dsfa.platform.sdk.common.kit.StrKit;
 import lombok.Getter;
 import org.springframework.beans.BeanUtils;
@@ -19,7 +21,11 @@ import java.util.List;
  * @Date 2021/7/27
  **/
 @Getter
-public class Course {
+public class Course implements Aggregate<PK> {
+    /**
+     * 主键唯一标识
+     */
+    private PK id;
     /**
      * 课程基本信息
      */
