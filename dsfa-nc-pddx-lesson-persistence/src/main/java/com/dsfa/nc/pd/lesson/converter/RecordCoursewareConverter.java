@@ -1,12 +1,13 @@
-package com.dsfa.nc.pd.learn.converter;
+package com.dsfa.nc.pd.lesson.converter;
 
 import com.dsfa.nc.courses.api.record.courseware.pojo.po.NcRecordCourseware;
-import com.dsfa.nc.pd.learn.entity.RecordCourseware;
-import com.dsfa.nc.pd.learn.types.Rate;
-import com.dsfa.nc.pd.learn.types.TimePoint;
+import com.dsfa.nc.pd.lesson.entity.courseware.RecordCourseware;
+import com.dsfa.nc.pd.lesson.types.Rate;
+import com.dsfa.nc.pd.lesson.types.TimePoint;
 import com.dsfa.nc.pd.types.PK;
 import com.dsfa.platform.sdk.common.kit.StrKit;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -36,17 +37,21 @@ public class RecordCoursewareConverter { // 单例模式
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         RecordCourseware res = null;
         try {
+            Date finishedTime = null;
+            if (rcDO.getFinishedTime() != null) {
+                finishedTime = sdf.parse(rcDO.getFinishedTime());
+            }
             res = RecordCourseware.builder()
                     .id(new PK(rcDO.getNcRecordCoursewareId()))
                     .coursewareId(new PK(rcDO.getRelationId()))
                     .userId(new PK(rcDO.getDsfaOuaUserId()))
-                    .sumWatchTime(rcDO.getSumWatchTime())
+                    .sumWatchTime(new BigDecimal( Double.parseDouble(rcDO.get("sum_watch_time")) ))
                     .lastWatchPoint(new TimePoint(rcDO.getLastWatchPoint()))
-                    .sumDurationLong(rcDO.getSumDurationLong())
+                    .sumDurationLong(Long.parseLong(rcDO.get("sum_duration_long")))
                     .isFinished(StrKit.equals(rcDO.getIsFinishedValue(), "1"))
-                    .finishedRate(new Rate(Double.parseDouble(rcDO.getFinishedRate())))
-                    .finishedTime(sdf.parse(rcDO.getFinishedTime()))
-                    .upTime(new Date(rcDO.getUpTime()))
+                    .finishedRate(new Rate(Integer.parseInt(rcDO.getFinishedRate())))
+                    .finishedTime(finishedTime)
+                    .upTime(new Date(Long.parseLong(rcDO.get("up_time"))))
                     .build();
         } catch (ParseException e) {
             e.printStackTrace();

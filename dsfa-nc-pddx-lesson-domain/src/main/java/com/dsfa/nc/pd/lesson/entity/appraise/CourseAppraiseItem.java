@@ -20,4 +20,8 @@ public class CourseAppraiseItem implements Entity<PK> {
     private String accountId;
 
     private AppraiseItemType type;
+
+    public void changeType(AppraiseItemType newAppraiseType) {
+        this.type = newAppraiseType;
+    }
 }

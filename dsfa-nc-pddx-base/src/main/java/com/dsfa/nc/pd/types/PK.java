@@ -3,6 +3,8 @@ package com.dsfa.nc.pd.types;
 import com.dsfa.nc.pd.domain.Identifier;
 import lombok.Getter;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * @ClassName PK
  * @Description TODO
@@ -13,7 +15,7 @@ import lombok.Getter;
 public class PK implements Identifier {
     private final String val;
 
-    public PK(String id) {
+    public PK(@NotNull String id) {
         this.val = id;
     }
 }

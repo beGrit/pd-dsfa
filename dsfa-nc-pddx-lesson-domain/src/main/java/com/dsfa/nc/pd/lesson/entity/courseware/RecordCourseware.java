@@ -1,17 +1,14 @@
-package com.dsfa.nc.pd.learn.entity;
+package com.dsfa.nc.pd.lesson.entity.courseware;
 
 import com.dsfa.nc.pd.domain.Entity;
-import com.dsfa.nc.pd.domain.Identifier;
-import com.dsfa.nc.pd.learn.types.Rate;
-import com.dsfa.nc.pd.learn.types.TimePoint;
+import com.dsfa.nc.pd.lesson.types.Rate;
+import com.dsfa.nc.pd.lesson.types.TimePoint;
 import com.dsfa.nc.pd.types.PK;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -77,29 +74,31 @@ public class RecordCourseware implements Entity<PK> {
     /**
      * 修改学习记录断点
      * @param newWatchPoint 新断点时间
-     * @return 状态迁移是否成功
+     * @return
      */
-    public boolean changeWatchPoint(TimePoint newWatchPoint) {
+    public int changeWatchPoint(TimePoint newWatchPoint) {
+        int rtn = 0;
         if (newWatchPoint.getSeconds() <= sumDurationLong || newWatchPoint.getSeconds() >= 0) {
             if (!isFinished && !newWatchPoint.before(lastWatchPoint)) { // 未完成且需要往后移动,需要更新 finishedRate
                 if (lastWatchPoint.getSeconds() == this.sumDurationLong) { // 需要修改为完成状态
                     this.isFinished = true;
                     this.finishedTime = new Date();
+                    return 2;
                 }
-
                 long l1 = newWatchPoint.getSeconds() - this.lastWatchPoint.getSeconds();
                 double rateVal = l1 / (sumDurationLong * 1.0);
                 finishedRate = new Rate(rateVal);
                 this.sumDurationLong += l1;
+                return 1;
             } else if (isFinished && !newWatchPoint.before(lastWatchPoint)) { // 已完成且需要往后移动
                 long l1 = newWatchPoint.getSeconds() - this.lastWatchPoint.getSeconds();
                 this.sumDurationLong += l1;
             }
             this.lastWatchPoint = newWatchPoint;
             this.upTime = new Date();
-            return true;
+            return 0;
         } else { // 更新的断点时间大于总时间或者小于0,非法状态迁移
-            return false;
+            return -1;
         }
     }
 }

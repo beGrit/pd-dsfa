@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/learn/courseware")
 public class LearnCoursewareController extends BaseController {
 
+/*
     @Autowired
     IRecordCoursewareRepository coursewareRepository;
 
@@ -37,4 +38,5 @@ public class LearnCoursewareController extends BaseController {
             return success();
         }
     }
+*/
 }

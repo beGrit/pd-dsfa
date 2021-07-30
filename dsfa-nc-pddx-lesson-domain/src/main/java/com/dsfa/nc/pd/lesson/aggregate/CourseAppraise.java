@@ -1,6 +1,5 @@
 package com.dsfa.nc.pd.lesson.aggregate;
 
-import com.dsfa.nc.pd.domain.Aggregate;
 import com.dsfa.nc.pd.domain.Entity;
 import com.dsfa.nc.pd.lesson.entity.appraise.CourseAppraiseItem;
 import com.dsfa.nc.pd.lesson.types.AppraiseItemType;
@@ -17,7 +16,7 @@ import java.util.List;
  * @Date 2021/7/28
  **/
 @Getter
-public class CourseAppraise implements Aggregate<PK> {
+public class CourseAppraise implements Entity<PK> {
     private PK id;
 
     private String courseId;

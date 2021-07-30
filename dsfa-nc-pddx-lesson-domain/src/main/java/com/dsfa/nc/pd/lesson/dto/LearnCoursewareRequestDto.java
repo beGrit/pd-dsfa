@@ -1,11 +1,10 @@
-package com.dsfa.nc.pd.learn.dto;
+package com.dsfa.nc.pd.lesson.dto;
 
-import com.dsfa.nc.pd.learn.serializer.TimePointDeserializer;
-import com.dsfa.nc.pd.learn.serializer.TimePointSerializer;
-import com.dsfa.nc.pd.learn.types.TimePoint;
+import com.dsfa.nc.pd.lesson.serializer.TimePointDeserializer;
+import com.dsfa.nc.pd.lesson.serializer.TimePointSerializer;
+import com.dsfa.nc.pd.lesson.types.TimePoint;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import lombok.Data;
 
 /**
  * @ClassName LearnCoursewareRequestDto
@@ -14,9 +13,19 @@ import lombok.Data;
  * @Date 2021/7/29
  **/
 public class LearnCoursewareRequestDto {
+    private String courseId;
+
     private String coursewareId;
 
     private TimePoint newTimePoint;
+
+    public String getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
+    }
 
     public String getCoursewareId() {
         return coursewareId;

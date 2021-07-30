@@ -1,6 +1,6 @@
-package com.dsfa.nc.pd.learn.serializer;
+package com.dsfa.nc.pd.lesson.serializer;
 
-import com.dsfa.nc.pd.learn.types.TimePoint;
+import com.dsfa.nc.pd.lesson.types.TimePoint;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;

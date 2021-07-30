@@ -1,9 +1,9 @@
-package com.dsfa.nc.pd.learn.repository.impl;
+package com.dsfa.nc.pd.lesson.repository.impl;
 
 import com.dsfa.nc.courses.api.record.courseware.pojo.po.NcRecordCourseware;
-import com.dsfa.nc.pd.learn.converter.RecordCoursewareConverter;
-import com.dsfa.nc.pd.learn.entity.RecordCourseware;
-import com.dsfa.nc.pd.learn.repository.IRecordCoursewareRepository;
+import com.dsfa.nc.pd.lesson.converter.RecordCoursewareConverter;
+import com.dsfa.nc.pd.lesson.entity.courseware.RecordCourseware;
+import com.dsfa.nc.pd.lesson.reposiitory.IRecordCoursewareRepository;
 import com.dsfa.nc.pd.types.PK;
 import com.dsfa.platform.sdk.common.kit.StrKit;
 import org.springframework.stereotype.Repository;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
  * @Author pocky
  * @Date 2021/7/29
  **/
-//@Repository
+@Repository
 public class RecordCoursewareRepositoryImpl implements IRecordCoursewareRepository {
     private final NcRecordCourseware recordCoursewareDao = NcRecordCourseware.dao;
     @Override

@@ -1,10 +1,5 @@
 package com.dsfa.pd.util;
 
-import com.alibaba.druid.pool.DruidDataSource;
-import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
-import com.jfinal.plugin.activerecord.generator.Generator;
-import com.jfinal.plugin.activerecord.generator.MetaBuilder;
-
 /**
  * @ClassName Generator
  * @Description TODO
@@ -12,7 +7,7 @@ import com.jfinal.plugin.activerecord.generator.MetaBuilder;
  * @Date 2021/7/21
  **/
 public class JFinalGenerator {
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         DruidDataSource dataSource = new DruidDataSource();
 
         dataSource.setUrl("jdbc:mysql://192.168.0.28:3320/dsfa_nc5");
@@ -64,5 +59,5 @@ public class JFinalGenerator {
 
         // 开始生成代码
         gen.generate();
-    }
+    }*/
 }
