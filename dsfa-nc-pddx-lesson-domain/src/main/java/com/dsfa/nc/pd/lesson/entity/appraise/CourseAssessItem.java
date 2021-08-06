@@ -1,7 +1,7 @@
 package com.dsfa.nc.pd.lesson.entity.appraise;
 
 import com.dsfa.nc.pd.domain.Entity;
-import com.dsfa.nc.pd.lesson.types.AppraiseItemType;
+import com.dsfa.nc.pd.lesson.types.AssessType;
 import com.dsfa.nc.pd.types.PK;
 import lombok.Data;
 
@@ -12,16 +12,16 @@ import lombok.Data;
  * @Date 2021/7/27
  **/
 @Data
-public class CourseAppraiseItem implements Entity<PK> {
+public class CourseAssessItem implements Entity<PK> {
     private PK id;
 
     private String courseId;
 
     private String accountId;
 
-    private AppraiseItemType type;
+    private AssessType type;
 
-    public void changeType(AppraiseItemType newAppraiseType) {
-        this.type = newAppraiseType;
+    public void changeType(AssessType newAssessType) {
+        this.type = newAssessType;
     }
 }

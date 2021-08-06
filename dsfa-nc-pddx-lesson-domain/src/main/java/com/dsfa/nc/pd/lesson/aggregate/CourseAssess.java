@@ -1,8 +1,8 @@
 package com.dsfa.nc.pd.lesson.aggregate;
 
 import com.dsfa.nc.pd.domain.Entity;
-import com.dsfa.nc.pd.lesson.entity.appraise.CourseAppraiseItem;
-import com.dsfa.nc.pd.lesson.types.AppraiseItemType;
+import com.dsfa.nc.pd.lesson.entity.appraise.CourseAssessItem;
+import com.dsfa.nc.pd.lesson.types.AssessType;
 import com.dsfa.nc.pd.types.PK;
 import com.dsfa.platform.sdk.common.kit.StrKit;
 import lombok.Getter;
@@ -16,28 +16,29 @@ import java.util.List;
  * @Date 2021/7/28
  **/
 @Getter
-public class CourseAppraise implements Entity<PK> {
+public class CourseAssess implements Entity<PK> {
     private PK id;
 
     private String courseId;
 
     private Double score;
 
-    private List<CourseAppraiseItem> items;
+    private List<CourseAssessItem> items;
 
-    public Long getNums() {
-        return (long) this.items.size();
+    public int getNumberOfPeople() {
+        return this.items.size();
     }
 
-    public CourseAppraise(String courseId, List<CourseAppraiseItem> items) {
+    public CourseAssess(String courseId, List<CourseAssessItem> items) {
+        this.id = new PK(courseId);
         this.courseId = courseId;
         this.items = items;
-        int count = 0;
+        double sum = 0;
         if (items != null) {
             for (int i = 0; i < items.size(); i++) {
-                count += items.get(i).getType().getScore();
+                sum += items.get(i).getType().getScore();
             }
-            this.score = count / (items.size() * 1.0);
+            this.score = sum / (items.size() * 1.0);
         }
     }
 
@@ -45,30 +46,30 @@ public class CourseAppraise implements Entity<PK> {
      * 课程被某人评价
      *
      * @param accountId
-     * @param appraiseItemType
+     * @param assessType
      * @return
      */
-    public boolean beAppraise(String accountId, AppraiseItemType appraiseItemType) {
+    public boolean beAppraise(String accountId, AssessType assessType) {
         if (this.items != null) {
             boolean flag1 = true;
-            for (CourseAppraiseItem item : items) {
+            for (CourseAssessItem item : items) {
                 String accountId2 = item.getAccountId();
                 if (StrKit.equals(accountId, accountId2)) {
                     // 修改请求
                     flag1 = false;
                     item.setAccountId(accountId);
-                    item.setType(appraiseItemType);
+                    item.setType(assessType);
                     return true;
                 }
             }
             if (flag1) {
                 // 新增请求
-                CourseAppraiseItem courseAppraiseItem = new CourseAppraiseItem();
-                courseAppraiseItem.setId(new PK(StrKit.uuid()));
-                courseAppraiseItem.setCourseId(this.courseId);
-                courseAppraiseItem.setAccountId(accountId);
-                courseAppraiseItem.setType(appraiseItemType);
-                items.add(courseAppraiseItem);
+                CourseAssessItem courseAssessItem = new CourseAssessItem();
+                courseAssessItem.setId(new PK(StrKit.uuid()));
+                courseAssessItem.setCourseId(this.courseId);
+                courseAssessItem.setAccountId(accountId);
+                courseAssessItem.setType(assessType);
+                items.add(courseAssessItem);
                 return true;
             }
         }

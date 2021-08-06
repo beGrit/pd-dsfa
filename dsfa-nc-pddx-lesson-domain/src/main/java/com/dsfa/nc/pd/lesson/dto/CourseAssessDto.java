@@ -2,7 +2,7 @@ package com.dsfa.nc.pd.lesson.dto;
 
 import lombok.Data;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 /**
  * @ClassName CourseAppraiseDto 课程下的评价(DTO)
@@ -11,10 +11,15 @@ import java.util.List;
  * @Date 2021/7/28
  **/
 @Data
-public class CourseAppraiseDto {
+public class CourseAssessDto {
     private String courseId;
 
     private Double score;
 
-    private List<CourseAppraiseItemDto> items;
+    private int numberOfPeople;
+
+    public Double getScore() {
+        BigDecimal b = new BigDecimal(this.score);
+        return b.setScale(1, BigDecimal.ROUND_DOWN).doubleValue();
+    }
 }

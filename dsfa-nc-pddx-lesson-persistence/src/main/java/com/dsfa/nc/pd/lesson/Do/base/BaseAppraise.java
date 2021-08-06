@@ -8,13 +8,13 @@ import com.dsfa.platform.starter.meta.base.DsfaBaseModel;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseAppraise<M extends BaseAppraise<M>> extends DsfaBaseModel<M> {
 
-	public M setCsmlLsfAppraiseId(String csmlLsfAppraiseId) {
-		set("csml_lsf_appraise_id", csmlLsfAppraiseId);
+	public M setCsmlLsfAssessId(String csmlLsfAppraiseId) {
+		set("csml_lsf_assess_id", csmlLsfAppraiseId);
 		return (M)this;
 	}
 	
-	public String getCsmlLsfAppraiseId() {
-		return getStr("csml_lsf_appraise_id");
+	public String getCsmlLsfAssessId() {
+		return getStr("csml_lsf_assess_id");
 	}
 	
 	public M setDsUpdateUserId(String dsUpdateUserId) {
@@ -108,12 +108,12 @@ public abstract class BaseAppraise<M extends BaseAppraise<M>> extends DsfaBaseMo
 	}
 	
 	public M setCourseId(String courseId) {
-		set("courseId", courseId);
+		set("course_id", courseId);
 		return (M)this;
 	}
 	
 	public String getCourseId() {
-		return getStr("courseId");
+		return getStr("course_id");
 	}
 	
 	public M setType(String type) {
@@ -126,12 +126,12 @@ public abstract class BaseAppraise<M extends BaseAppraise<M>> extends DsfaBaseMo
 	}
 	
 	public M setAccountId(String accountId) {
-		set("accountId", accountId);
+		set("account_id", accountId);
 		return (M)this;
 	}
 	
 	public String getAccountId() {
-		return getStr("accountID");
+		return getStr("account_id");
 	}
 	
 }

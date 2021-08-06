@@ -1,6 +1,6 @@
 package com.dsfa.nc.pd.lesson.reposiitory;
 
-import com.dsfa.nc.pd.lesson.aggregate.CourseAppraise;
+import com.dsfa.nc.pd.lesson.aggregate.CourseAssess;
 
 /**
  * @ClassName ICourseAppraiseRepository
@@ -8,11 +8,11 @@ import com.dsfa.nc.pd.lesson.aggregate.CourseAppraise;
  * @Author pocky
  * @Date 2021/7/28
  **/
-public interface ICourseAppraiseRepository {
+public interface ICourseAssessRepository {
     /**
      * 根据课程的id,获取到课程的评价
      * @param courseId
      * @return
      */
-    CourseAppraise findByCourseId(String courseId);
+    CourseAssess findByCourseId(String courseId);
 }
