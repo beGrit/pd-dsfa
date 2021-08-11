@@ -1,4 +1,12 @@
-package com.dsfa.pd.util;
+package com.dsfa.nc.pd.lesson.gen;
+
+import com.alibaba.druid.pool.DruidDataSource;
+import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
+import com.jfinal.plugin.activerecord.generator.Generator;
+import com.jfinal.plugin.activerecord.generator.MetaBuilder;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @ClassName Generator
@@ -6,23 +14,32 @@ package com.dsfa.pd.util;
  * @Author pocky
  * @Date 2021/7/21
  **/
-public class JFinalGenerator {
-/*    public static void main(String[] args) {
+public abstract class JFinalGenerator {
+    public static void main(String[] args) {
+        Set<String> set = new HashSet<>();
+        set.add("nc_courses_info");
+        set.add("nc_courses_courseware");
+        set.add("nc_courses_courseware_sub");
+//        set.add("nc_courses_ass")
+        genTables(set);
+    }
+
+    public static void genTables(Set<String> tables) {
         DruidDataSource dataSource = new DruidDataSource();
 
-        dataSource.setUrl("jdbc:mysql://192.168.0.28:3320/dsfa_nc5");
-        dataSource.setUsername("nc_5");
+        dataSource.setUrl("jdbc:mysql://192.168.0.14:3141/dsfa_pdwlxy");
+        dataSource.setUsername("pdwlxy");
         dataSource.setPassword("Study_111111");
 
         // model 所使用的包名 (MappingKit 默认使用的包名)
-        String modelPackageName = "com.dsfa.nc.web.nctest.lsf.demo.teacher.dao";
+        String modelPackageName = "com.dsfa.nc.pd.lesson.Do";
 
         // base model 所使用的包名
         String baseModelPackageName = modelPackageName + ".base";
 
         // base model 文件保存路径
         // 注意从 jfinal 4.9.12 版开始，PathKit.getWebRootPath() 在此的用法要改成 System.getProperty("user.dir")
-        String baseModelOutputDir = System.getProperty("user.dir") + "/src/main/java/" + baseModelPackageName.replace('.', '/');
+        String baseModelOutputDir = System.getProperty("user.dir") + "/dsfa-nc-pddx-lesson-persistence/src/main/java/" + baseModelPackageName.replace('.', '/');
 
         // model 文件保存路径 (MappingKit 与 DataDictionary 文件默认保存路径)
         String modelOutputDir = baseModelOutputDir + "/..";
@@ -36,7 +53,7 @@ public class JFinalGenerator {
         MetaBuilder metaBuilder = new MetaBuilder(dataSource)
                 // 使用 filter 方法定制过滤逻辑，返回 true 表示过滤掉当前 table
                 .skip(tableName -> {
-                    return !tableName.startsWith("nc_teacher");
+                    return !tables.contains(tableName);
                 });
 
         // 设置数据库方言
@@ -55,9 +72,13 @@ public class JFinalGenerator {
         gen.setGenerateDaoInModel(true);
 
         // 设置去除前缀
-        gen.setRemovedTableNamePrefixes("nc_");
+        gen.setRemovedTableNamePrefixes("");
+
+        // 自定义生成规则模板
+        gen.setModelTemplate("common/model_template.jf");
+        gen.setBaseModelTemplate("common/base_model_template.jf");
 
         // 开始生成代码
         gen.generate();
-    }*/
+    }
 }

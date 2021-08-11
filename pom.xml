@@ -103,11 +103,11 @@
 		</dependency>
 
 		<!--使用JFinal的代码生成器-->
-<!--		<dependency>
+		<dependency>
 			<groupId>com.jfinal</groupId>
 			<artifactId>jfinal</artifactId>
 			<version>4.9.15</version>
-		</dependency>-->
+		</dependency>
     </dependencies>
 
 	<build>
