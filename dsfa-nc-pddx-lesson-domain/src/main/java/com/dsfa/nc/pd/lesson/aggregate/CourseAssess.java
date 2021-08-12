@@ -2,7 +2,7 @@ package com.dsfa.nc.pd.lesson.aggregate;
 
 import com.dsfa.nc.pd.domain.Entity;
 import com.dsfa.nc.pd.lesson.entity.appraise.CourseAssessItem;
-import com.dsfa.nc.pd.lesson.types.AssessType;
+import com.dsfa.nc.pd.types.AssessType;
 import com.dsfa.nc.pd.types.PK;
 import com.dsfa.platform.sdk.common.kit.StrKit;
 import lombok.Getter;

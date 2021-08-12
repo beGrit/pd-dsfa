@@ -1,10 +1,10 @@
 package com.dsfa.nc.pd.lesson.converter;
 
 import com.dsfa.nc.courses.api.record.courseware.pojo.po.NcRecordCourseware;
-import com.dsfa.nc.pd.lesson.entity.courseware.RecordCourseware;
-import com.dsfa.nc.pd.lesson.types.Rate;
-import com.dsfa.nc.pd.lesson.types.TimePoint;
+import com.dsfa.nc.pd.lesson.entity.courseware.UserCoursewareRecordItem;
 import com.dsfa.nc.pd.types.PK;
+import com.dsfa.nc.pd.types.Rate;
+import com.dsfa.nc.pd.types.TimePoint;
 import com.dsfa.platform.sdk.common.kit.StrKit;
 
 import java.math.BigDecimal;
@@ -33,15 +33,15 @@ public class RecordCoursewareConverter { // 单例模式
                @Mapping(target = "sumWatchTime", dateFormat = "")
        })
     */
-    public static RecordCourseware toEntity(NcRecordCourseware rcDO) {
+    public static UserCoursewareRecordItem toEntity(NcRecordCourseware rcDO) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        RecordCourseware res = null;
+        UserCoursewareRecordItem res = null;
         try {
             Date finishedTime = null;
             if (rcDO.getFinishedTime() != null) {
                 finishedTime = sdf.parse(rcDO.getFinishedTime());
             }
-            res = RecordCourseware.builder()
+            res = UserCoursewareRecordItem.builder()
                     .id(new PK(rcDO.getNcRecordCoursewareId()))
                     .coursewareId(new PK(rcDO.getRelationId()))
                     .userId(new PK(rcDO.getDsfaOuaUserId()))
@@ -59,7 +59,7 @@ public class RecordCoursewareConverter { // 单例模式
         return res;
     }
 
-    public static NcRecordCourseware toDO(RecordCourseware recordCourseware) {
+    public static NcRecordCourseware toDO(UserCoursewareRecordItem userCoursewareRecordItem) {
         return null;
     }
 }

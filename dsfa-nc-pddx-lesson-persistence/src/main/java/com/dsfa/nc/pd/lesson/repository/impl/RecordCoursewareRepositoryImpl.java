@@ -2,7 +2,7 @@ package com.dsfa.nc.pd.lesson.repository.impl;
 
 import com.dsfa.nc.courses.api.record.courseware.pojo.po.NcRecordCourseware;
 import com.dsfa.nc.pd.lesson.converter.RecordCoursewareConverter;
-import com.dsfa.nc.pd.lesson.entity.courseware.RecordCourseware;
+import com.dsfa.nc.pd.lesson.entity.courseware.UserCoursewareRecordItem;
 import com.dsfa.nc.pd.lesson.reposiitory.IRecordCoursewareRepository;
 import com.dsfa.nc.pd.types.PK;
 import com.dsfa.platform.sdk.common.kit.StrKit;
@@ -18,18 +18,18 @@ import org.springframework.stereotype.Repository;
 public class RecordCoursewareRepositoryImpl implements IRecordCoursewareRepository {
     private final NcRecordCourseware recordCoursewareDao = NcRecordCourseware.dao;
     @Override
-    public void attach(RecordCourseware aggregate) {
+    public void attach(UserCoursewareRecordItem aggregate) {
 
     }
 
     @Override
-    public void detach(RecordCourseware aggregate) {
+    public void detach(UserCoursewareRecordItem aggregate) {
 
     }
 
     @Override
-    public RecordCourseware find(PK pk) {
-        RecordCourseware res = null;
+    public UserCoursewareRecordItem find(PK pk) {
+        UserCoursewareRecordItem res = null;
         String id = pk.getVal();
         NcRecordCourseware recordCoursewareDO = recordCoursewareDao.findById(id);
         Integer delFlag = recordCoursewareDO.getDsDeleted();
@@ -40,12 +40,12 @@ public class RecordCoursewareRepositoryImpl implements IRecordCoursewareReposito
     }
 
     @Override
-    public void remove(RecordCourseware aggregate) {
+    public void remove(UserCoursewareRecordItem aggregate) {
 
     }
 
     @Override
-    public void save(RecordCourseware entity) {
+    public void save(UserCoursewareRecordItem entity) {
         NcRecordCourseware rcDO = RecordCoursewareConverter.toDO(entity);
         if (StrKit.isNotBlank(rcDO.getNcRecordCoursewareId())) {
             rcDO.update();

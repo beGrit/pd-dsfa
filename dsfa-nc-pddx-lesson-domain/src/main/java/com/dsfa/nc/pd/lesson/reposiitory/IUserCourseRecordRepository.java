@@ -1,7 +1,7 @@
 package com.dsfa.nc.pd.lesson.reposiitory;
 
 import com.dsfa.nc.pd.domain.Repository;
-import com.dsfa.nc.pd.lesson.aggregate.UserCourseRecord;
+import com.dsfa.nc.pd.lesson.aggregate.UserCourseRecordItem;
 import com.dsfa.nc.pd.types.PK;
 
 /**
@@ -10,6 +10,6 @@ import com.dsfa.nc.pd.types.PK;
  * @Author pocky
  * @Date 2021/7/30
  **/
-public interface IUserCourseRecordRepository extends Repository<UserCourseRecord, PK> {
-    UserCourseRecord findByCourseIdAndUserId(PK courseId, PK userId);
+public interface IUserCourseRecordRepository extends Repository<UserCourseRecordItem, PK> {
+    UserCourseRecordItem find(PK courseId, PK userId);
 }

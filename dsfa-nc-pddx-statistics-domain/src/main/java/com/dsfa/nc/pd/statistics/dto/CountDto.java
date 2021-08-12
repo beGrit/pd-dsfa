@@ -2,6 +2,8 @@ package com.dsfa.nc.pd.statistics.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @ClassName CountDto
  * @Description TODO
@@ -9,7 +11,7 @@ import lombok.Data;
  * @Date 2021/7/26
  **/
 @Data
-public class CountDto {
+public class CountDto implements Serializable {
     private long classCount;
 
     private long studentCount;

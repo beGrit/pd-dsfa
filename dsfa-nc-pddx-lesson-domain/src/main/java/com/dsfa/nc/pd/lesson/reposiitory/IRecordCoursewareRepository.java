@@ -1,7 +1,7 @@
 package com.dsfa.nc.pd.lesson.reposiitory;
 
 import com.dsfa.nc.pd.domain.Repository;
-import com.dsfa.nc.pd.lesson.entity.courseware.RecordCourseware;
+import com.dsfa.nc.pd.lesson.entity.courseware.UserCoursewareRecordItem;
 import com.dsfa.nc.pd.types.PK;
 
 /**
@@ -10,19 +10,19 @@ import com.dsfa.nc.pd.types.PK;
  * @Author pocky
  * @Date 2021/7/29
  **/
-public interface IRecordCoursewareRepository extends Repository<RecordCourseware,PK> {
+public interface IRecordCoursewareRepository extends Repository<UserCoursewareRecordItem,PK> {
     @Override
-    public void attach(RecordCourseware aggregate);
+    public void attach(UserCoursewareRecordItem aggregate);
 
     @Override
-    public void detach(RecordCourseware aggregate);
+    public void detach(UserCoursewareRecordItem aggregate);
 
     @Override
-    public RecordCourseware find(PK pk);
+    public UserCoursewareRecordItem find(PK pk);
 
     @Override
-    public void remove(RecordCourseware aggregate);
+    public void remove(UserCoursewareRecordItem aggregate);
 
     @Override
-    public void save(RecordCourseware aggregate);
+    public void save(UserCoursewareRecordItem aggregate);
 }

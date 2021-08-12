@@ -1,4 +1,4 @@
-package com.dsfa.nc.pd.lesson.gen;
+package com.dsfa.nc.pd.util;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
@@ -14,32 +14,28 @@ import java.util.Set;
  * @Author pocky
  * @Date 2021/7/21
  **/
-public abstract class JFinalGenerator {
+public abstract class BaseJFinalGenerator {
     public static void main(String[] args) {
         Set<String> set = new HashSet<>();
-        set.add("nc_courses_info");
-        set.add("nc_courses_courseware");
-        set.add("nc_courses_courseware_sub");
-//        set.add("nc_courses_ass")
-        genTables(set);
+        set.add("nc_record_courseware");
+        String modelPackageName = "com.dsfa.nc.pd.temp.model";
+        String baseProjectDir = "/dsfa-nc-pddx-base";
+        genTables(set, modelPackageName, baseProjectDir);
     }
 
-    public static void genTables(Set<String> tables) {
+    public static void genTables(Set<String> tables, String modelPackageName, String baseProjectDir) {
         DruidDataSource dataSource = new DruidDataSource();
 
         dataSource.setUrl("jdbc:mysql://192.168.0.14:3141/dsfa_pdwlxy");
         dataSource.setUsername("pdwlxy");
         dataSource.setPassword("Study_111111");
 
-        // model 所使用的包名 (MappingKit 默认使用的包名)
-        String modelPackageName = "com.dsfa.nc.pd.lesson.Do";
-
         // base model 所使用的包名
         String baseModelPackageName = modelPackageName + ".base";
 
         // base model 文件保存路径
         // 注意从 jfinal 4.9.12 版开始，PathKit.getWebRootPath() 在此的用法要改成 System.getProperty("user.dir")
-        String baseModelOutputDir = System.getProperty("user.dir") + "/dsfa-nc-pddx-lesson-persistence/src/main/java/" + baseModelPackageName.replace('.', '/');
+        String baseModelOutputDir = System.getProperty("user.dir") + baseProjectDir + "/src/main/java/" + baseModelPackageName.replace('.', '/');
 
         // model 文件保存路径 (MappingKit 与 DataDictionary 文件默认保存路径)
         String modelOutputDir = baseModelOutputDir + "/..";

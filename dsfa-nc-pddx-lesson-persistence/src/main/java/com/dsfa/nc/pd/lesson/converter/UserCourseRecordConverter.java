@@ -2,10 +2,10 @@ package com.dsfa.nc.pd.lesson.converter;
 
 import com.dsfa.nc.courses.api.record.course.pojo.po.NcRecordCourse;
 import com.dsfa.nc.courses.api.record.courseware.pojo.po.NcRecordCourseware;
-import com.dsfa.nc.pd.lesson.aggregate.UserCourseRecord;
-import com.dsfa.nc.pd.lesson.entity.courseware.RecordCourseware;
-import com.dsfa.nc.pd.lesson.types.Rate;
+import com.dsfa.nc.pd.lesson.aggregate.UserCourseRecordItem;
+import com.dsfa.nc.pd.lesson.entity.courseware.UserCoursewareRecordItem;
 import com.dsfa.nc.pd.types.PK;
+import com.dsfa.nc.pd.types.Rate;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -18,7 +18,7 @@ import java.util.List;
  * @Date 2021/7/30
  **/
 public class UserCourseRecordConverter {
-    public static final UserCourseRecord toEntity(NcRecordCourse recordCourse, List<NcRecordCourseware> ncRecordCoursewareList) {
+    public static final UserCourseRecordItem toEntity(NcRecordCourse recordCourse, List<NcRecordCourseware> ncRecordCoursewareList) {
 
         String id = recordCourse.getNcRecordCourseId();
         String courseId = recordCourse.getRelationId();
@@ -29,13 +29,13 @@ public class UserCourseRecordConverter {
         String upTime = recordCourse.getUpTime();
         Date finishedTime = recordCourse.getFinishedTime();
 
-        List<RecordCourseware> list = new LinkedList<>();
+        List<UserCoursewareRecordItem> list = new LinkedList<>();
         for (NcRecordCourseware item : ncRecordCoursewareList) {
-            RecordCourseware recordCourseware = RecordCoursewareConverter.toEntity(item);
-            list.add(recordCourseware);
+            UserCoursewareRecordItem userCoursewareRecordItem = RecordCoursewareConverter.toEntity(item);
+            list.add(userCoursewareRecordItem);
         }
 
-        UserCourseRecord res = UserCourseRecord.builder()
+        UserCourseRecordItem res = UserCourseRecordItem.builder()
                 .id(new PK(id))
                 .courseId(new PK(courseId))
                 .userId(new PK(userId))
@@ -45,7 +45,7 @@ public class UserCourseRecordConverter {
                 .upTime(new Date(Long.parseLong(upTime)))
                 .finishedTime(finishedTime)
                 // 组装课件学习记录
-                .recordCoursewareList(list)
+                .userCoursewareRecordItemList(list)
                 .build();
         return res;
     }

@@ -2,7 +2,7 @@ package com.dsfa.nc.pd.lesson.converter;
 
 import com.dsfa.nc.pd.lesson.Do.CourseAssessItemDO;
 import com.dsfa.nc.pd.lesson.entity.appraise.CourseAssessItem;
-import com.dsfa.nc.pd.lesson.types.AssessType;
+import com.dsfa.nc.pd.types.AssessType;
 import com.dsfa.nc.pd.types.PK;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;

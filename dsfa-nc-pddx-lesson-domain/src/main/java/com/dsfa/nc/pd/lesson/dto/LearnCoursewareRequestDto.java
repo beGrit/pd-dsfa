@@ -1,8 +1,8 @@
 package com.dsfa.nc.pd.lesson.dto;
 
-import com.dsfa.nc.pd.lesson.serializer.TimePointDeserializer;
-import com.dsfa.nc.pd.lesson.serializer.TimePointSerializer;
-import com.dsfa.nc.pd.lesson.types.TimePoint;
+import com.dsfa.nc.pd.serializer.TimePointDeserializer;
+import com.dsfa.nc.pd.serializer.TimePointSerializer;
+import com.dsfa.nc.pd.types.TimePoint;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 

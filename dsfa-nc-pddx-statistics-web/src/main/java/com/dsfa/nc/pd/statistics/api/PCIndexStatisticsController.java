@@ -20,11 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/pc/nc/pagehome/index")
 public class PCIndexStatisticsController extends BaseController {
     @Autowired
-    IStatisticsService countService;
+    IStatisticsService statisticsService;
 
     @GetMapping(value = "counts")
     public Result counts() {
-        CountDto dto = countService.getCounts();
+        CountDto dto = statisticsService.getCounts();
         return success(dto);
     }
 }

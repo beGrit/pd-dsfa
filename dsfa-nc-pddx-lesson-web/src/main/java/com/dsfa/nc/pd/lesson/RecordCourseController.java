@@ -2,8 +2,8 @@ package com.dsfa.nc.pd.lesson;
 
 import com.dsfa.nc.common.session.UserSession;
 import com.dsfa.nc.courses.exception.CourseException;
-import com.dsfa.nc.pd.lesson.aggregate.UserCourseRecord;
-import com.dsfa.nc.pd.lesson.dto.LearnCoursewareRequestDto;
+import com.dsfa.nc.pd.lesson.aggregate.UserCourseRecordItem;
+import com.dsfa.nc.pd.lesson.dto.RecordCoursewareCommand;
 import com.dsfa.nc.pd.lesson.reposiitory.IUserCourseRecordRepository;
 import com.dsfa.nc.pd.types.PK;
 import com.dsfa.platform.sdk.common.Result;
@@ -30,16 +30,11 @@ public class RecordCourseController extends BaseController {
     @Autowired
     UserSession userSession;
 
-    /**
-     * 更新单个学习课件记录
-     * @param dto
-     * @return
-     */
     @PostMapping("one")
-    public Result learnCourseware(@RequestBody LearnCoursewareRequestDto dto) {
-        UserCourseRecord userCourseRecord = repository.findByCourseIdAndUserId(new PK(dto.getCourseId()), new PK("4bc6fb2bf1e84d7a9993bcd69917bcd0"));
-        if (userCourseRecord != null) {
-            boolean b = userCourseRecord.changeCoursewareWatchPoint(new PK(dto.getCoursewareId()), dto.getNewTimePoint());
+    public Result learnCourseware(@RequestBody RecordCoursewareCommand cmd) {
+        UserCourseRecordItem userCourseRecordItem = repository.find(cmd.getCourseId(), new PK(session().getId()));
+        if (userCourseRecordItem != null) {
+            boolean b = userCourseRecordItem.changeCoursewareWatchPoint(cmd);
             return success();
         } else {
             throw new CourseException("未找到相应的学习记录");

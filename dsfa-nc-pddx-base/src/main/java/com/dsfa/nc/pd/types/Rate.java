@@ -1,4 +1,4 @@
-package com.dsfa.nc.pd.lesson.types;
+package com.dsfa.nc.pd.types;
 
 import lombok.Getter;
 

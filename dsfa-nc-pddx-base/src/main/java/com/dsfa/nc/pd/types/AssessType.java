@@ -1,9 +1,10 @@
-package com.dsfa.nc.pd.lesson.types;
+package com.dsfa.nc.pd.types;
 
 import com.dsfa.platform.sdk.common.kit.StrKit;
 
 import javax.validation.ValidationException;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * @ClassName AppraiseItemType 评价类型
@@ -11,7 +12,7 @@ import javax.validation.constraints.NotNull;
  * @Author pocky
  * @Date 2021/7/28
  **/
-public class AssessType {
+public class AssessType implements Serializable {
     private final String name;
     private Double score;
 

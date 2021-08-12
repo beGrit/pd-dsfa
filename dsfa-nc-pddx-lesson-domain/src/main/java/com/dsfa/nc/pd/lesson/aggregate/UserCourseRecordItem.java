@@ -1,10 +1,11 @@
 package com.dsfa.nc.pd.lesson.aggregate;
 
 import com.dsfa.nc.pd.domain.Aggregate;
-import com.dsfa.nc.pd.lesson.entity.courseware.RecordCourseware;
-import com.dsfa.nc.pd.lesson.types.Rate;
-import com.dsfa.nc.pd.lesson.types.TimePoint;
+import com.dsfa.nc.pd.lesson.dto.RecordCoursewareCommand;
+import com.dsfa.nc.pd.lesson.entity.courseware.UserCoursewareRecordItem;
 import com.dsfa.nc.pd.types.PK;
+import com.dsfa.nc.pd.types.Rate;
+import com.dsfa.nc.pd.types.TimePoint;
 import com.dsfa.platform.sdk.common.kit.StrKit;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,7 +21,7 @@ import java.util.List;
  **/
 @Getter
 @Builder
-public class UserCourseRecord implements Aggregate<PK> { // 用户学习课程的记录
+public class UserCourseRecordItem implements Aggregate<PK> { // 用户学习课程的记录
     private PK id;
 
     /**
@@ -61,22 +62,18 @@ public class UserCourseRecord implements Aggregate<PK> { // 用户学习课程�
     /**
      * 课程下的子课件的学习记录
      */
-    private List<RecordCourseware> recordCoursewareList;
+    private List<UserCoursewareRecordItem> userCoursewareRecordItemList;
 
     @Override
     public PK getId() {
         return this.id;
     }
 
-    /**
-     * 更改
-     * @param coursewareId
-     * @param newWatchPoint
-     * @return
-     */
-    public boolean changeCoursewareWatchPoint(PK coursewareId, TimePoint newWatchPoint) {
+    public boolean changeCoursewareWatchPoint(RecordCoursewareCommand cmd) {
+        PK coursewareId = cmd.getCoursewareId();
+        TimePoint newWatchPoint = cmd.getNewWatchPoint();
         boolean res = false;
-        for (RecordCourseware courseware : recordCoursewareList) {
+        for (UserCoursewareRecordItem courseware : userCoursewareRecordItemList) {
             boolean b = StrKit.equals(courseware.getCoursewareId().getVal(), coursewareId.getVal());
             if (b) {
                 int rtn = courseware.changeWatchPoint(newWatchPoint);
@@ -102,9 +99,9 @@ public class UserCourseRecord implements Aggregate<PK> { // 用户学习课程�
     private Rate calRate() {
         long sum = 0;
         long watchedSum = 0;
-        for (RecordCourseware recordCourseware : recordCoursewareList) {
-            long itemSum = recordCourseware.getSumDurationLong();
-            long itemFinishedTime = recordCourseware.getLastWatchPoint().getSeconds();
+        for (UserCoursewareRecordItem userCoursewareRecordItem : userCoursewareRecordItemList) {
+            long itemSum = userCoursewareRecordItem.getSumDurationLong();
+            long itemFinishedTime = userCoursewareRecordItem.getLastWatchPoint().getSeconds();
             sum += itemSum;
             watchedSum += itemFinishedTime;
         }

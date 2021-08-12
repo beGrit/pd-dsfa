@@ -1,7 +1,6 @@
 package com.dsfa.nc.pd.lesson.reposiitory;
 
 import com.dsfa.nc.pd.lesson.entity.appraise.CourseAssessItem;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,7 +11,7 @@ import java.util.List;
  * @Date 2021/7/28
  **/
 public interface ICourseAssessItemRepository {
-    CourseAssessItem findByCourseIdAndAccountId(String courseId, String accountId);
+    CourseAssessItem find(String courseId, String accountId);
 
     List<CourseAssessItem> findListByCourseId(String courseId);
 

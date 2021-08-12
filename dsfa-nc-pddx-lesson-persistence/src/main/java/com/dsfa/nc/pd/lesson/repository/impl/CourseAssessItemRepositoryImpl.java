@@ -24,7 +24,7 @@ public class CourseAssessItemRepositoryImpl implements ICourseAssessItemReposito
     private final String TABLE_NAME = "csml_lsf_assess";
 
     @Override
-    public CourseAssessItem findByCourseIdAndAccountId(String courseId, String accountId) {
+    public CourseAssessItem find(String courseId, String accountId) {
         List<CourseAssessItemDO> courseAssessItemDOList = assessItemDao.find("select * from " + TABLE_NAME);
         for (CourseAssessItemDO courseAssessItemDO : courseAssessItemDOList) {
             String delFlag = courseAssessItemDO.getDeleted();

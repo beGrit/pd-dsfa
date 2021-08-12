@@ -1,9 +1,9 @@
 package com.dsfa.nc.pd.lesson.entity.courseware;
 
 import com.dsfa.nc.pd.domain.Entity;
-import com.dsfa.nc.pd.lesson.types.Rate;
-import com.dsfa.nc.pd.lesson.types.TimePoint;
 import com.dsfa.nc.pd.types.PK;
+import com.dsfa.nc.pd.types.Rate;
+import com.dsfa.nc.pd.types.TimePoint;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +20,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Builder
-public class RecordCourseware implements Entity<PK> {
+public class UserCoursewareRecordItem implements Entity<PK> {
     /**
      * 主键唯一标识
      */

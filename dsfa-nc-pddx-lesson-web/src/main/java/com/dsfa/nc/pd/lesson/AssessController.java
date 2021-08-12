@@ -36,8 +36,8 @@ public class AssessController extends BaseController {
 
     @PostMapping(value = "one")
     public Result assess(@RequestParam("id") String courseId, @RequestParam("type") String type) {
-        String userId = userSession.getUnitId();
-        boolean rtn = assessService.assessCourse(courseId, userId, type);
+        String userId = userSession.getUserId();
+        boolean rtn = assessService.assessCourse(courseId, "2a35c0b6b8894699bdbc4656aa1ef7bc", type);
         if (rtn) {
             return success();
         } else {

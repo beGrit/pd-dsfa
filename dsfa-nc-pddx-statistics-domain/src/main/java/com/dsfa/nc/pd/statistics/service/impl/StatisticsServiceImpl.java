@@ -5,8 +5,8 @@ import com.dsfa.nc.pd.statistics.service.IStatisticsService;
 import com.dsfa.platform.starter.db.jfinal.plugin.activerecord.Db;
 import com.dsfa.platform.starter.db.jfinal.plugin.activerecord.Record;
 import com.dsfa.platform.starter.db.jfinal.plugin.activerecord.SqlPara;
-import com.dsfa.platform.starter.redis.RedisExecute;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,72 +16,35 @@ import org.springframework.stereotype.Service;
  * @Date 2021/7/27
  **/
 @Service
+@CacheConfig(cacheNames = "statistics")
 public class StatisticsServiceImpl implements IStatisticsService {
     private static final String SQL_KEY = "statistics.sql.";
 
     private static final String redisKey = "statistics";
 
-    /**
-     * Key过期时间(单位 秒)
-     */
-    private static final Long timeout = (long) (60 * 60 * 24);
-
-    @Autowired
-    RedisExecute redisExecute;
-
-    @Override
     public long countClass() {
-        String itemKey = "class"; // redisKey
-        long res = 0;
-        Integer count = (Integer) redisExecute.getHash(redisKey, itemKey);
-        if (count == null) { // redis无缓存,需要查库
-            SqlPara sqlPara = Db.getSqlPara(SQL_KEY + "countClasses");
-            Record record = Db.findFirst(sqlPara);
-            res = record.get("count(*)");
-            // 操作redis
-            redisExecute.putHash(redisKey, itemKey, res, timeout);
-            return res;
-        } else {
-            res = count;
-            return res;
-        }
+        SqlPara sqlPara = Db.getSqlPara(SQL_KEY + "countClasses");
+        Record record = Db.findFirst(sqlPara);
+        long res = record.get("count(*)");
+        return res;
     }
 
-    @Override
     public long countStudent() {
-        String itemKey = "student"; // redisKey
-        long res = 0;
-        Integer count = (Integer) redisExecute.getHash(redisKey, itemKey);
-        if (count == null) { // redis无缓存,需要查库
-            SqlPara sqlPara = Db.getSqlPara(SQL_KEY + "countStudents");
-            Record record = Db.findFirst(sqlPara);
-            res = record.get("count(*)");
-            redisExecute.putHash(redisKey, itemKey, res, timeout);
-            return res;
-        } else {
-            res = count;
-            return res;
-        }
+        SqlPara sqlPara = Db.getSqlPara(SQL_KEY + "countStudents");
+        Record record = Db.findFirst(sqlPara);
+        long res = record.get("count(*)");
+        return res;
     }
 
-    @Override
     public long countTeacher() {
-        String itemKey = "teacher"; // redisKey
-        long res = 0;
-        Integer count = (Integer) redisExecute.getHash(redisKey, itemKey);
-        if (count == null) { // redis无缓存,需要查库
-            SqlPara sqlPara = Db.getSqlPara(SQL_KEY + "countTeachers");
-            Record record = Db.findFirst(sqlPara);
-            res = record.get("count(*)");
-            redisExecute.putHash(redisKey, itemKey, res, timeout);
-            return res;
-        } else {
-            res = count;
-            return res;
-        }
+        SqlPara sqlPara = Db.getSqlPara(SQL_KEY + "countTeachers");
+        Record record = Db.findFirst(sqlPara);
+        long res = record.get("count(*)");
+        return res;
     }
 
     @Override
+    @Cacheable(key = "'pd.index'")
     public CountDto getCounts() {
         long c1 = this.countClass();
         long c2 = this.countStudent();
