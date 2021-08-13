@@ -17,16 +17,10 @@ public class ICourseAssessItemCacheService { // 课程评价的缓存服务
     @Autowired
     ICourseAssessItemRepository courseAssessItemRepository;
 
-    private static String cacheName = "cache:CourseAssessItem:";
+    private static String cacheName = "csml:lsf:assess:";
 
     @Autowired
     ObjectMapper om;
-
-    public CourseAssessItem cacheSync(CourseAssessItem courseAssessItem) {
-        String courseId = courseAssessItem.getCourseId();
-        String accountId = courseAssessItem.getAccountId();
-        return null;
-    }
 
     public CourseAssessItem cacheUpdate(CourseAssessItem courseAssessItem) {
         redisExecute.set(cacheName + courseAssessItem.getId().getVal(), courseAssessItem);
@@ -34,12 +28,22 @@ public class ICourseAssessItemCacheService { // 课程评价的缓存服务
     }
 
     public CourseAssessItem cacheFind(String courseId, String accountId) { // 第一次存储
-        String key = courseId + "&" + accountId;
+        String key = jointRedisExpireKey(courseId, accountId);
         boolean b = redisExecute.hasKey(cacheName + key);
         if (b) { // redis中有数据
             return (CourseAssessItem) redisExecute.get(cacheName + key);
         } else { // 从关系db中拿
             return courseAssessItemRepository.find(courseId, accountId);
         }
+    }
+
+    private String jointRedisExpireKey(String courseId, String accountId) {
+        String res = "expire:course:assess:" + courseId + accountId;
+        return res;
+    }
+
+    private String jointRedisKey(String courseId, String accountId) {
+        String res = "course:assess:" + courseId + accountId;
+        return res;
     }
 }

@@ -47,7 +47,6 @@ public class AssessServiceImpl implements IAssessService {
         } else {
             item.changeType(new AssessType(type));
         }
-        courseAssessItemCacheService.cacheSync(item);
         courseAssessItemCacheService.cacheUpdate(item);
         return rtn == 1;
     }
