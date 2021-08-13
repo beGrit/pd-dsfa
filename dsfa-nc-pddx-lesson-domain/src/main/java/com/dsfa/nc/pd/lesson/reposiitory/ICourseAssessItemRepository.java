@@ -1,6 +1,7 @@
 package com.dsfa.nc.pd.lesson.reposiitory;
 
 import com.dsfa.nc.pd.lesson.entity.appraise.CourseAssessItem;
+import com.dsfa.nc.pd.types.PK;
 
 import java.util.List;
 
@@ -12,6 +13,8 @@ import java.util.List;
  **/
 public interface ICourseAssessItemRepository {
     CourseAssessItem find(String courseId, String accountId);
+
+    CourseAssessItem find(PK pk);
 
     List<CourseAssessItem> findListByCourseId(String courseId);
 

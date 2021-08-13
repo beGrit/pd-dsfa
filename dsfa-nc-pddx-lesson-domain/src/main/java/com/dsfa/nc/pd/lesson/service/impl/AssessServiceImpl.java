@@ -31,7 +31,8 @@ public class AssessServiceImpl implements IAssessService {
     @Override
     public boolean assessCourse(String courseId, String accountId, String type) {
         int rtn = 1;
-        CourseAssessItem item = courseAssessItemCacheService.cacheFind("7012d80a9d86434e848b6fcc8ab1b422",courseId, accountId);
+        // 查询记录的主键
+        CourseAssessItem item = courseAssessItemCacheService.cacheFind(courseId, accountId);
         if (item == null) {
             NcCoursesInfo courseInfoDo = iNcCourseInfoService.queryCourseInfoModelById(courseId);
             if (courseInfoDo == null || StrKit.equals(courseInfoDo.getDsDeleted(), "1")) {

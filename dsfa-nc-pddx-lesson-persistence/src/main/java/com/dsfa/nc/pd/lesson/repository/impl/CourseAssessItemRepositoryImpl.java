@@ -42,6 +42,18 @@ public class CourseAssessItemRepositoryImpl implements ICourseAssessItemReposito
     }
 
     @Override
+    public CourseAssessItem find(PK pk) {
+        List<CourseAssessItemDO> list = assessItemDao.find("select * from " + TABLE_NAME + " where ds_deleted = '0'");
+        for (CourseAssessItemDO itemDO : list) {
+            String id = itemDO.getCsmlLsfAssessId();
+            if (StrKit.equals(pk.getVal(), id)) {
+                return CourseAssessItemConverter.INSTANCE.toEntity(itemDO);
+            }
+        }
+        return null;
+    }
+
+    @Override
     public List<CourseAssessItem> findListByCourseId(String courseId) {
         List<CourseAssessItem> res = null;
         List<CourseAssessItemDO> list = assessItemDao.find("select * from " + TABLE_NAME);
